@@ -14,6 +14,8 @@ import {
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
+
+  
   const footerLinks = {
     Product: [
       { name: 'Features', href: '#features' },
@@ -29,15 +31,15 @@ export default function Footer() {
     ],
     Support: [
       { name: 'Help Center', href: '#' },
-      { name: 'Contact Us', href: 'mailto:support@hirefy.careers' },
+      { name: 'Contact Us', href: 'mailto:contact@hirefy.careers' },
       { name: 'Status', href: '#' },
       { name: 'API Docs', href: '#' },
     ],
     Legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
-      { name: 'Refund Policy', href: '#' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Refund Policy', href: '/refund' },
+      { name: 'Cookie Policy', href: '/cookies' },
     ],
   }
 
@@ -98,11 +100,11 @@ export default function Footer() {
               {/* Contact Info */}
               <div className="space-y-2">
                 <a
-                  href="mailto:hello@hirefy.careers"
+                  href="mailto:contact@hirefy.careers"
                   className="flex items-center space-x-2 text-gray-400 hover:text-primary-400 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>hello@hirefy.careers</span>
+                  <span>contact@hirefy.careers</span>
                 </a>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <MapPin className="w-4 h-4" />
@@ -172,13 +174,13 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-primary-400 transition-colors">
+              <a href="/privacy" className="hover:text-primary-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-primary-400 transition-colors">
+              <a href="/terms" className="hover:text-primary-400 transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-primary-400 transition-colors">
+              <a href="/cookies" className="hover:text-primary-400 transition-colors">
                 Cookies
               </a>
             </div>
