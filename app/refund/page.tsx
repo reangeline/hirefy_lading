@@ -2,6 +2,7 @@ import LegalLayout from '@/components/LegalLayout'
 import ReactMarkdown from 'react-markdown'
 
 export default function RefundPolicy() {
+  metadata
   return (
     <LegalLayout title="Refund Policy" lastUpdated="February 4, 2025">
      <ReactMarkdown>{`# Refund Policy for Hirefy
@@ -272,4 +273,10 @@ For other questions: **contact@hirefy.careers**
 `}</ReactMarkdown>
     </LegalLayout>
   )
+}
+
+export const metadata = {
+  title: 'Refund Policy | Hirefy',
+  description: 'Learn how Hirefy handles refunds and cancellations.',
+  robots: 'noindex, nofollow', // Não indexar páginas legais
 }

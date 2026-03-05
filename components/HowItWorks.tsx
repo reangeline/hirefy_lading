@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Upload, Sparkles, Download, ArrowRight } from 'lucide-react'
+import { ClipboardList, Sparkles, Download, ArrowRight } from 'lucide-react'
 
 export default function HowItWorks() {
   const ref = useRef(null)
@@ -12,10 +12,10 @@ export default function HowItWorks() {
   const steps = [
     {
       number: '01',
-      icon: Upload,
-      title: 'Upload Your Resume',
+      icon: ClipboardList,
+      title: 'Fill Out Your Profile',
       description:
-        'Simply drag and drop your current resume or paste the text. We support PDF, Word, and text formats.',
+        'Complete a quick form directly in the app with your experience, skills, and career goals. No file uploads needed.',
       color: 'from-primary-400 to-primary-600',
     },
     {
