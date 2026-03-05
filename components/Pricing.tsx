@@ -40,6 +40,7 @@ export default function Pricing() {
         'Industry-specific tips',
         'Before/after comparisons',
         'Track changes over time',
+        'LinkedIn profile optimization',
         'Priority email support',
         'Resume templates',
       ],

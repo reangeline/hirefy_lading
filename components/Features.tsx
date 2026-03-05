@@ -10,6 +10,7 @@ import {
   Award,
   BarChart3,
   Lightbulb,
+  Linkedin,
 } from 'lucide-react'
 
 export default function Features() {
@@ -52,6 +53,12 @@ export default function Features() {
       title: 'AI Suggestions',
       description:
         'Get smart suggestions on how to improve bullet points and descriptions.',
+    },
+    {
+      icon: Linkedin,
+      title: 'LinkedIn Optimization',
+      description:
+        'Subscribers get personalized tips to optimize their LinkedIn profile and attract more recruiters.',
     },
   ]
 
