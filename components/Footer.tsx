@@ -3,10 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {
-  Twitter,
-  Linkedin,
-  Instagram,
-  Youtube,
   Mail,
   MapPin,
 } from 'lucide-react'
@@ -42,33 +38,6 @@ export default function Footer() {
       { name: 'Cookie Policy', href: '/cookies' },
     ],
   }
-
-  const socialLinks = [
-    {
-      name: 'Twitter',
-      icon: Twitter,
-      href: 'https://twitter.com/hirefy',
-      color: 'hover:text-blue-400',
-    },
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      href: 'https://linkedin.com/company/hirefy',
-      color: 'hover:text-blue-600',
-    },
-    {
-      name: 'Instagram',
-      icon: Instagram,
-      href: 'https://instagram.com/hirefy',
-      color: 'hover:text-pink-500',
-    },
-    {
-      name: 'YouTube',
-      icon: Youtube,
-      href: 'https://youtube.com/@hirefy',
-      color: 'hover:text-red-500',
-    },
-  ]
 
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -113,27 +82,6 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex space-x-4"
-            >
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 transition-colors ${social.color}`}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </motion.div>
           </div>
 
           {/* Link Columns */}
