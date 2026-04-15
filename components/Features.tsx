@@ -6,59 +6,84 @@ import { useRef } from 'react'
 import {
   Zap,
   Target,
-  FileText,
-  Award,
-  BarChart3,
-  Lightbulb,
   Linkedin,
+  LayoutDashboard,
+  Lightbulb,
+  CalendarDays,
+  BarChart3,
+  Smartphone,
 } from 'lucide-react'
 
 export default function Features() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-  const features = [
+  const categories = [
     {
-      icon: Zap,
-      title: 'Instant ATS Score',
-      description:
-        'Get your resume analyzed in 30 seconds. Know exactly how ATS systems see your resume.',
+      label: 'Resume & ATS',
+      badgeColor: 'bg-primary-100 text-primary-700',
+      features: [
+        {
+          icon: Zap,
+          title: 'Instant ATS Score',
+          description:
+            'Upload your PDF and get an ATS score in seconds — with a qualitative label and a numbered improvement checklist. Try it before even creating an account.',
+        },
+        {
+          icon: Target,
+          title: 'Job-Specific Optimization',
+          description:
+            'Select your base resume, enter the company and role, and paste the job description. AI tailors every keyword and bullet to that exact posting — with a matched vs. missing keyword breakdown.',
+        },
+        {
+          icon: Linkedin,
+          title: 'LinkedIn Profile Generator',
+          description:
+            'Generate AI-optimized Headline, About, Experience, Skills, and Languages from your resume — each section in a carousel with a one-click copy button.',
+        },
+      ],
     },
     {
-      icon: Target,
-      title: 'Keyword Optimization',
-      description:
-        'AI identifies missing keywords from job descriptions and suggests exactly where to add them.',
+      label: 'Application Pipeline',
+      badgeColor: 'bg-indigo-100 text-indigo-700',
+      features: [
+        {
+          icon: LayoutDashboard,
+          title: 'Full Kanban Board',
+          description:
+            'Manage every application across Wishlist → Applied → Interview → Offer / Rejected with a chronological event timeline per job.',
+        },
+        {
+          icon: Lightbulb,
+          title: 'AI Coach per Stage',
+          description:
+            'Get context-aware AI suggestions for every job based on its current stage and days since you applied — so you always know the right next move.',
+        },
+        {
+          icon: CalendarDays,
+          title: 'Interviews, Follow-ups & Contacts',
+          description:
+            'Log interviews with date and type, track follow-ups by channel (email or LinkedIn), and manage contacts per application — name, role, LinkedIn, and notes.',
+        },
+      ],
     },
     {
-      icon: FileText,
-      title: 'Format Fixer',
-      description:
-        'Automatically detect and fix formatting issues that cause ATS rejection.',
-    },
-    {
-      icon: Award,
-      title: 'Industry-Specific Tips',
-      description:
-        'Get tailored recommendations for your specific industry and role.',
-    },
-    {
-      icon: BarChart3,
-      title: 'Track Your Progress',
-      description:
-        'See your improvements over time and track which optimizations work best.',
-    },
-    {
-      icon: Lightbulb,
-      title: 'AI Suggestions',
-      description:
-        'Get smart suggestions on how to improve bullet points and descriptions.',
-    },
-    {
-      icon: Linkedin,
-      title: 'LinkedIn Optimization',
-      description:
-        'Subscribers get personalized tips to optimize their LinkedIn profile and attract more recruiters.',
+      label: 'Analytics & Extras',
+      badgeColor: 'bg-violet-100 text-violet-700',
+      features: [
+        {
+          icon: BarChart3,
+          title: 'Application Analytics',
+          description:
+            'See total applications, response rate, average ATS score, interviews, offers, and ghostings. Find which resume version drove the most callbacks and track weekly activity.',
+        },
+        {
+          icon: Smartphone,
+          title: 'iOS Home Screen Widget',
+          description:
+            'Keep your job search top-of-mind with a native iPhone widget showing your PRO status, credits, and resume count directly on your home screen.',
+        },
+      ],
     },
   ]
 
@@ -92,49 +117,66 @@ export default function Features() {
               <span className="text-gradient">Beat ATS</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hirefy gives you all the tools to optimize your resume and land
-              more interviews
+              From instant ATS scoring to pipeline management, Hirefy covers
+              every step of your job search
             </p>
           </motion.div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: 'easeOut',
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -10,
-                  transition: { duration: 0.2 },
-                }}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 group"
-              >
+          {/* Features Grid by Category */}
+          <div className="space-y-16">
+            {categories.map((category, catIndex) => (
+              <div key={category.label}>
                 <motion.div
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={isInView ? { scale: 1, rotate: 0 } : {}}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.1 + 0.2,
-                    type: 'spring',
-                  }}
-                  className="bg-gradient-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:scale-110 transition-all"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, delay: catIndex * 0.1 }}
+                  className="flex items-center gap-3 mb-8"
                 >
-                  <feature.icon className="w-7 h-7 text-white" />
+                  <span className={`px-3 py-1 rounded-full text-sm font-semibold ${category.badgeColor}`}>
+                    {category.label}
+                  </span>
+                  <div className="flex-1 h-px bg-gray-100" />
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {category.features.map((feature, index) => (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                      transition={{
+                        duration: 0.6,
+                        delay: catIndex * 0.15 + index * 0.1,
+                        ease: 'easeOut',
+                      }}
+                      whileHover={{
+                        scale: 1.05,
+                        y: -10,
+                        transition: { duration: 0.2 },
+                      }}
+                      className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 group"
+                    >
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={isInView ? { scale: 1, rotate: 0 } : {}}
+                        transition={{
+                          duration: 0.6,
+                          delay: catIndex * 0.15 + index * 0.1 + 0.2,
+                          type: 'spring',
+                        }}
+                        className="bg-gradient-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:scale-110 transition-all"
+                      >
+                        <feature.icon className="w-7 h-7 text-white" />
+                      </motion.div>
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
@@ -151,7 +193,7 @@ export default function Features() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Try All Features Free
+              Try It Free — No Login Needed
             </motion.a>
           </motion.div>
         </div>

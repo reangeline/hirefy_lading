@@ -14,7 +14,7 @@ export default function Problem() {
       icon: FileX,
       title: '75% of Resumes Get Rejected',
       description:
-        'Your resume never reaches human recruiters. ATS systems automatically filter them out.',
+        "Your resume is filtered by ATS software before a human ever sees it. Without an optimized score, your application doesn't exist — no matter how qualified you are.",
       color: 'text-red-500',
       bgColor: 'bg-red-50',
     },
@@ -22,23 +22,23 @@ export default function Problem() {
       icon: AlertTriangle,
       title: 'Hidden Formatting Issues',
       description:
-        'Tables, columns, and creative designs that look great to you are invisible to ATS.',
+        'Tables, columns, images, and creative layouts confuse ATS parsers — making your skills and experience invisible to the systems that matter most.',
       color: 'text-orange-500',
       bgColor: 'bg-orange-50',
     },
     {
       icon: XCircle,
-      title: 'Missing Keywords',
+      title: 'Generic Resumes Miss the Mark',
       description:
-        'ATS scans for specific keywords. Without them, even qualified candidates get rejected.',
+        'Every job posting has specific keywords. Without tailoring your resume to each role, even overqualified candidates get auto-rejected before a human reads their name.',
       color: 'text-yellow-600',
       bgColor: 'bg-yellow-50',
     },
     {
       icon: Clock,
-      title: 'Applications Disappear Into Void',
+      title: 'No System to Track Applications',
       description:
-        'You spend hours applying but never hear back. The problem? Your resume format, not your qualifications.',
+        'You apply to dozens of jobs with no way to track stages, schedule follow-ups, or manage recruiter contacts. Opportunities slip through the cracks without a structured pipeline.',
       color: 'text-blue-500',
       bgColor: 'bg-blue-50',
     },

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ClipboardList, Sparkles, Download, ArrowRight } from 'lucide-react'
+import { Upload, Wand2, LayoutDashboard, ArrowRight } from 'lucide-react'
 
 export default function HowItWorks() {
   const ref = useRef(null)
@@ -12,26 +12,26 @@ export default function HowItWorks() {
   const steps = [
     {
       number: '01',
-      icon: ClipboardList,
-      title: 'Fill Out Your Profile',
+      icon: Upload,
+      title: 'Upload & Get Your ATS Score',
       description:
-        'Complete a quick form directly in the app with your experience, skills, and career goals. No file uploads needed.',
+        'Upload your PDF resume and get an instant ATS score with a qualitative label and a numbered improvement checklist. No account needed to see your first result.',
       color: 'from-primary-400 to-primary-600',
     },
     {
       number: '02',
-      icon: Sparkles,
-      title: 'AI Analysis',
+      icon: Wand2,
+      title: 'Optimize for the Job',
       description:
-        'Our AI analyzes your resume in 30 seconds, checking ATS compatibility, keywords, format, and more.',
+        "Select your resume, enter the company and role, then paste the job description. Hirefy's AI tailors every keyword and bullet to that exact posting — with a breakdown of matched vs. missing keywords.",
       color: 'from-primary-500 to-primary-700',
     },
     {
       number: '03',
-      icon: Download,
-      title: 'Get Optimized Resume',
+      icon: LayoutDashboard,
+      title: 'Track & Get Coached',
       description:
-        'Receive detailed feedback, suggestions, and download your ATS-optimized resume ready to land interviews.',
+        "Add applications to your Kanban pipeline and move them through stages. Hirefy's AI coach delivers context-aware next steps at every stage — from follow-up timing to interview prep.",
       color: 'from-primary-600 to-primary-800',
     },
   ]
@@ -76,7 +76,7 @@ export default function HowItWorks() {
               Get Started in <span className="text-gradient">3 Easy Steps</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Optimize your resume in less than 5 minutes
+              From upload to optimized application pipeline — in minutes
             </p>
           </motion.div>
 
